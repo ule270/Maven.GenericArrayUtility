@@ -12,10 +12,11 @@ public class ArrayUtility<T>{
         this.inputArray = inputArray;
     }
     public Integer countDuplicatesInMerge(T[] arrayToMerge, T valueToEvaluate){
-//        merge arrays first then iterate through and count
+        T[] mergedArray = Arrays.copyOf(inputArray, inputArray.length + arrayToMerge.length);
+        System.arraycopy(arrayToMerge, 0, mergedArray, inputArray.length, arrayToMerge.length);
         int count =  0;
-        for (int i = 0; i < inputArray.length; i++){
-            if (inputArray[i] == valueToEvaluate){
+        for (int i = 0; i < mergedArray.length; i++){
+            if (mergedArray[i] == valueToEvaluate){
                 count++;
             }
         }
