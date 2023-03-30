@@ -22,8 +22,14 @@ public class ArrayUtility<T>{
         }
         return count;
     }
-    public long getNumberOfOccurrences(Integer[] inputArray){
-        return -1;
+    public Integer getNumberOfOccurrences(T valueToEvaluate){
+        int count = 0;
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] == valueToEvaluate) {
+                count++;
+            }
+        }
+        return count;
     }
     public Integer removeValueTest(Integer[] inputArray){
         return 1;
